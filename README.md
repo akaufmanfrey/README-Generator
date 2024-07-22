@@ -1,2 +1,11 @@
-# README-Generator
-A script which generates a README file based on user input
+# README-Generator 
+## Description 
+ A tool to generate a README based on user input 
+## Installation 
+ install 
+## Contributing 
+ contribute 
+## Usage 
+ use 
+## Tests 
+ test 
