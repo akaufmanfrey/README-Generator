@@ -1,11 +1,8 @@
 # README-Generator 
 ## Description 
- A tool to generate a README based on user input 
-## Installation 
- install 
-## Contributing 
- contribute 
-## Usage 
- use 
-## Tests 
- test 
+
+    A tool for generating a README file based on user input## Installation 
+
+    Install contents of repo in the folder you want to generate the README in## Usage 
+
+    Run using node by typing 'node index.js' in the terminal in the folder you want to generate the README in
