@@ -2,11 +2,12 @@ const inquirer = require("inquirer");
 const fs = require('fs');
 const generateMarkdown = require('./utils/generateMarkdown.js');
 
-// TODO: Create an array of questions for user input
+// Array of questions for user input
 const questions = ['Description', 'Installation', 'Usage', 'License', 'Contributing', 'Tests', 'Questions'];
 
-// TODO: Create a function to write README file
+// Generates a specific section of the README, waits for the promise before continuing to execute
 async function createSection(question) {
+  // Since the license section needs a badge and a list of options, it is given its own specific code
     if (question === 'License') {
         await inquirer.prompt([
             {
@@ -20,6 +21,7 @@ async function createSection(question) {
             fs.appendFile('README.md', generateMarkdown(question, response.License), (err) => err? console.error(err) : console.log(''));
         })
     } else if (question === 'Questions') {
+      // Since the questions section has a link to a github and an email, it has its own specific code
       await inquirer.prompt([
         {
             type: 'input',
@@ -38,6 +40,7 @@ async function createSection(question) {
     }
     
     else {
+      // Every other section is generated identically so they have generic code
         await inquirer.prompt([
             {
                 type: 'input',
@@ -51,8 +54,9 @@ async function createSection(question) {
     }
 }
 
-// TODO: Create a function to initialize app
+// Function to initialize app
 async function init() {
+  // Prompt for title of the project with waits for the promise before continuing to execute
   await inquirer.prompt([
     {
       type: 'input',
@@ -63,6 +67,7 @@ async function init() {
   .then((response) => {
     fs.writeFile('README.md', `# ${response.title} \n`, (err) => err? console.error(err) : console.log(''));
   });
+  // Add table of contents
   fs.appendFile('README.md', `## Table of Contents
 1. [Description](#description)
 2. [Installation](#installation)
@@ -71,6 +76,7 @@ async function init() {
 5. [Contributing](#contributing)
 6. [Tests](#tests)
 7. [Questions](#questions) \n`, (err) => err? console.error(err) : console.log(''));
+// Make calls  to create section, waiting for each call to finish executing before continuing
   for await (const question of questions) {
     await createSection(question)
   }
