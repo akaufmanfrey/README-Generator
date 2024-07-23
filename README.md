@@ -1,8 +1,27 @@
 # README-Generator 
-## Description 
+## Table of Contents
+1. [Description](#description)
+2. [Installation](#installation)
+3. [Usage](#usage)
+4. [License](#license)
+5. [Contributing](#contributing)
+6. [Tests](#tests)
+7. [Questions](#questions) 
+## Description
+A tool for generating a README file based on user input
+## Installation
+test
+## Usage
+test
+## License
+[![License: ISC](https://img.shields.io/badge/License-ISC-blue.svg)](https://opensource.org/licenses/ISC)
 
-    A tool for generating a README file based on user input## Installation 
+Click the above badge to see the license.
+## Contributing
+test
+## Tests
+teste
+## Questions
+Github: https://github.com/akaufmanfrey 
 
-    Install contents of repo in the folder you want to generate the README in## Usage 
-
-    Run using node by typing 'node index.js' in the terminal in the folder you want to generate the README in
+If you have any questions email me at: akaufmanfrey@gmail.com
